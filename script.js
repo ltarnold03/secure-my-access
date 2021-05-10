@@ -9,6 +9,7 @@ var randomSpecialCharacters = ['~', '!', '@', '#', '$', '%', '^', '&', '*', '_',
 var randomUppercase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var randomLowercase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w','x','y','z']
 
+
 ///////////////////////////////////////////////////////////////////////////////////////////
 
 // Assignment Code
@@ -26,63 +27,81 @@ function writePassword() {
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
+
+
 var getNumbers = randomNumbers;
 var getSpecial = randomSpecialCharacters;
 var getUpper = randomUppercase;
 var getLower = randomLowercase;
 
-function numbers() {
-  var getNumbers = randomNumbers
-  getNumbers = confirm('Would you like your password to include numbers? Select "OK" for yes and "Cancel" for no.');
-  //numbers = Math.floor(Math.random() + 1);
-  randomNumbers = Math.floor(Math.random(/\d+/g) * 10);
-  return numbers;
+
+
+function generatePassword(input) {
+var randomPassword = "";
+
+for(let i=0; i < input.length; i++) {
+randomPassword = randompassword =+ getNumbers;
+randomPassword = randompassword =+ getSpecial;
+randomPassword = randompassword =+ getUpper;
+randomPassword = randompassword =+ getLower;
 }
-numbers();
-console.log(randomNumbers);
-
-function special(randomSpecialCharacters) {
-  var getSpecial = randomSpecialCharacters
-  getSpecial = confirm('Would you like your password to include special chaacters?'); 
-  return randomSpecialCharacters;
-}
-special();
-  console.log(getSpecial);
-
-function upper(randomUppercase) {
-  var getUpper = randomUppercase
-  getUpper = confirm("Would you like your password to include UPPERCASE letters?");
-  return randomUppercase;
-}
-upper();
-  console.log(getUpper);
-
-function lower(randomLowercase) {
-  var getLower = randomLowercase
-    getLower = confirm("Would you like your password to include lowercase letters?");
-    return randomLowercase;
-}
-lower();
-console.log(randomLowercase);
-
-function getLength() {
-//var getLength = prompt('How long would you like your password to be? Please select a number between 8 and 128.')  
-    //getLength = function(min, max) {
-    //var value = Math.floor(Math.random() * (max - min + 1) + min);
-
-  //return value;
 };
 
-//console.log(getLength);
 
-//var characterLength = function() {
-  //if (length >= 8 || length <= 128) {
-    //alert("Your password will be " + length + " characters long.");
-  //} else {
-    //length = alert('Please select a number between 8 and 128.');
-  //}
-    //console.log("Your password length will be " + length);
-    //return length;
-//};
 
+confirm('Would you like your password to include numbers? Select "OK" for yes and "Cancel" for no.');
+confirm('Would you like your password to include special chacters? Select "OK" for yes and "Cancel" for no.');
+confirm('Would you like your password to include UPPERCASE letters? Select "OK" for yes and "Cancel" for no.');
+confirm('Would you like your password to include lowercase letters? Select "OK" for yes and "Cancel" for no.');
+prompt('How long do you want your password to be? Please select a number between 8 and 128.');
+
+
+
+function numbers() {
+  
+  return getNumbers[Math.floor(Math.random() * getNumbers.length)];
+}
+numbers();
+console.log(numbers());
+
+function special() {
+  
+  return getSpecial[Math.floor(Math.random() * getSpecial.length)];
+}
+special();
+  console.log(special());
+
+function upper() {
+  
+  return getUpper[Math.floor(Math.random() * getUpper.length)];
+}
+upper();
+  console.log(upper());
+
+function lower() {
+    
+    return getLower[Math.floor(Math.random() * getLower.length)];
+}
+lower();
+console.log(lower());
+
+function getLength() {
+  console.log(getLength);
+  pwLength = Math.floor(Math.random() * getLength.length)
+  if (pwLength < 8 || pwLength > 128) {
+  } else {
+    alert("You must enter a number between 8 and 128. Please try again.");
+  }
+
+  return pwLength;
+}
+getLength();
+
+var input = {
+  num: getNumbers,
+  spec: getSpecial,
+  up: getUpper,
+  lo: getLower
+
+};
 //getPassword();
